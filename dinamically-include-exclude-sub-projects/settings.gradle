@@ -1,0 +1,28 @@
+rootProject.name = 'dinamically-include-exclude-projects'
+
+// Define all the sub projects
+def subprojects = ['sub-project-1', 'sub-project-2', 'sub-project-3'] as Set
+
+// Read all subprojects from the project properties.
+// Example of passed in project properties with Gradle CLI with the -P option
+// `gradlew build -Pincluded.projects=sub-project-1,sub-project-3`
+def includedProjectsKey="included.projects"
+def projectsToIncludeInput = hasProperty(includedProjectsKey) ? getProperties().get(includedProjectsKey) : ""
+
+Set<String> projectsToInclude = []
+if(projectsToIncludeInput != "") {
+
+  // Include passed in sub projects from project arguments
+  projectsToIncludeInput.toString().split(",").each {
+    projectsToInclude.add(it)
+  }
+} else {
+
+  // Include all sub projects if none is specified
+  projectsToInclude = subprojects
+}
+
+// Include sub projects
+projectsToInclude.each {
+  include it
+}
