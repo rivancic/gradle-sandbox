@@ -1,0 +1,20 @@
+plugins {
+    id 'java-platform'
+}
+
+group 'com.rivancic'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+// build.gradle for BOM "bom"
+// ...
+dependencies {
+    constraints {
+        api("com.google.code.gson:gson:2.8.7")
+        api("org.slf4j:slf4j-api:1.7.30")
+    }
+}
+// ...
