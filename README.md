@@ -10,5 +10,6 @@ Below is the menu for easier navigation between sections.
 |    Module     |  Description  |
 | ------------- |:-------------:| 
 | **[settings.gradle dinamically include projects](dinamically-include-exclude-sub-projects/)** | How to pass list of projects from CLI to Gradle to selectively include projects at initialization phase from settings.gradle file. |
+| **[maven-bom](maven-bom/)** | Brief example on how BOM is applied to a project and how it affects resolvement of dependencies in different configuration. |
 
 If you spot any issue in descriptions or source code, and especially if you have any suggestions for new topic or questions don't hesitate and open [an issue](https://github.com/rivancic/gradle-sandbox/issues/new).
